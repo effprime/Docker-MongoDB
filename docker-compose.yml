@@ -4,6 +4,7 @@ services:
   mongodb:
     container_name: ${CONTAINER_NAME:-mongodb}
     image: mongo:latest
+    env_file: .env
     ports:
       - ${MONGODB_PORT:-27017}:27017
     networks:
