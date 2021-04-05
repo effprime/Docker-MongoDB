@@ -3,7 +3,7 @@ version: '3'
 services:
   mongodb:
     image: mongo:latest
-    container_name: ${CONTAINER_NAME:-mongodb}
+    container_name: ${MONGO_CONTAINER_NAME:-mongodb}
     volumes:
     - ./data:/data/db
     ports:
@@ -14,7 +14,7 @@ services:
     restart: always
   mongoexpress:
     image: mongo-express:latest
-    container_name: ${CONTAINER_NAME}
+    container_name: ${EXPRESS_CONTAINER_NAME}
     ports:
     - ${EXPRESS_HOST_PORT}:8081
     environment:
